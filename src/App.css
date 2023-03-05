@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.app{
+    display: flex;
+    overflow: hidden;
+}
+
+/* main content */
+
+.main{
+    border: 2px dotted red;
+    /* Beaware: hard coded margin for main content */
+    margin-left: 277px;
+    background-color: #edede9;
+    /* flex: 0.8; */
+    width: 100%;
+}
+
+.routes{
+    /* padding: 20px; */
+}
