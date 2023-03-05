@@ -14,7 +14,7 @@ import "./App.css"
 export default function App() {
     return (
         <div className='app'>
-          <div className='main'>
+          <main className='main'>
             <div className='routes'>
                 {/* Planning components to have: */}
                 {/* Nested routes to have UI (navbar) shared */}
@@ -28,7 +28,7 @@ export default function App() {
                   </Route>
                 </Routes>
             </div>
-          </div>
+          </main>
         </div>
     )
 }

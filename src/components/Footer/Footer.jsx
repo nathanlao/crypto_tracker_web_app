@@ -6,7 +6,7 @@ import "./Footer.css"
 
 export default function Footer() {
     return (
-        <div className="footer">
+        <footer className="footer">
             <Typography.Paragraph strong={true} level={5} style={{color: "white"}}>
                 Nathan Development @2023<br />
                 All rights reserved
@@ -16,6 +16,6 @@ export default function Footer() {
                 <Link to="/cryptocurrencies">Cryptocurrencies</Link>
                 <Link to="/news">News</Link>
             </Space>
-        </div>
+        </footer>
     )
 }
