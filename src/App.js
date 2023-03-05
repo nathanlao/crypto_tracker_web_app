@@ -29,9 +29,6 @@ export default function App() {
                 </Routes>
             </div>
           </div>
-          <div className='footer'>
-
-          </div>
         </div>
     )
 }
