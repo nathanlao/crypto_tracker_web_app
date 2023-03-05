@@ -2,10 +2,10 @@ import React from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import { Typography, Space } from 'antd'
 
-import Home from './components/Home'
-import Cryptocurrencies from './components/Cryptocurrencies'
-import CryptoDetails from './components/CryptoDetails.jsx'
-import News from './components/News.jsx'
+import Home from './pages/Home'
+import Cryptocurrencies from './pages/Cryptocurrencies'
+import CryptoDetails from './pages/CryptoDetails.jsx'
+import News from './pages/News.jsx'
 
 import Layout from './components/Layout.jsx'
 
