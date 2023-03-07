@@ -7,6 +7,7 @@ import axios from "axios"
 
 import "./Home.css"
 import Cryptocurrencies from "../Cryptocurrencies";
+import News from "../News";
 
 export default function Home() {
 
@@ -78,6 +79,7 @@ export default function Home() {
                     <Link to="/cryptocurrencies">Show More</Link>
                 </Typography.Title>
             </div>
+            <Cryptocurrencies />
             <div className="home-header-container">
                 <Typography.Title level={2}>
                     Lastest Crypto News
@@ -86,6 +88,7 @@ export default function Home() {
                     <Link to="/news">Show More</Link>
                 </Typography.Title>
             </div>
+            <News />
         </div>
     )
 }
