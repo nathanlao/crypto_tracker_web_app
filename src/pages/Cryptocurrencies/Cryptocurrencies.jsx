@@ -54,6 +54,7 @@ export default function Cryptocurrencies() {
                         >
                         <p>Price: {millify(coin.price)}</p>
                         <p>Listed At: {millify(coin.listedAt)}</p>
+                        <p>24h Volume: {millify(coin['24hVolume'])}</p>
                         <p>Market Cap: {millify(coin.marketCap)}</p>
                         <p>Daily Change: {millify(coin.change)}%</p>
                     </Card>
