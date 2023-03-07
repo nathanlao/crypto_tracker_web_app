@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Typography, Row, Col, Statistic } from 'antd'
+import millify from "millify";
 import axios from "axios"
 
 export default function Home() {
@@ -36,8 +37,8 @@ export default function Home() {
                 // console.log(data)
                 setTotalCrypto(data.stats.totalCoins)
                 setTotalExchanges(data.stats.totalExchanges)
-                setTotalMarketCap(data.stats.totalMarketCap)
-                setTotalVolume(data.stats.total24hVolume)
+                setTotalMarketCap(millify(data.stats.totalMarketCap))
+                setTotalVolume(millify(data.stats.total24hVolume))
                 setTotalMarkets(data.stats.totalMarkets)
             })
             .catch((err) => console.log(err));
