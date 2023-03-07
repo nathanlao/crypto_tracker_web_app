@@ -1,0 +1,11 @@
+.coin-card-container {
+    min-height: 65vh;
+}
+
+.coin-card {
+    min-width: 250px;
+}
+
+.coin-card .coin-image{
+    width: 35px;
+}  
