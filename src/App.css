@@ -16,14 +16,12 @@ body {
 /* main content */
 
 .main{
-    border: 2px dotted red;
     /* Beaware: hard coded margin for main content */
     margin-left: 277px;
-    background-color: #edede9;
     /* flex: 0.8; */
     width: 100%;
 }
 
 .routes{
-    /* padding: 20px; */
+    padding: 20px;
 }

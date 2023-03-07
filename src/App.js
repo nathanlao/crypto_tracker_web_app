@@ -1,6 +1,5 @@
 import React from 'react'
-import { Routes, Route, Link } from 'react-router-dom'
-import { Typography, Space } from 'antd'
+import { Routes, Route } from 'react-router-dom'
 
 import Layout from './components/Layout.jsx'
 
