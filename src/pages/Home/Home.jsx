@@ -6,7 +6,7 @@ import millify from "millify";
 import axios from "axios"
 
 import "./Home.css"
-import Cryptocurrencies from "../Cryptocurrencies";
+import Cryptocurrencies from "../Cryptocurrencies/Cryptocurrencies";
 import News from "../News";
 
 export default function Home() {
