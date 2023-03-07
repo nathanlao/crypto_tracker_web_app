@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import Layout from './components/Layout.jsx'
 
-import Home from './pages/Home'
+import Home from './pages/Home/Home'
 import Cryptocurrencies from './pages/Cryptocurrencies'
 import CryptoDetails from './pages/CryptoDetails.jsx'
 import News from './pages/News.jsx'
