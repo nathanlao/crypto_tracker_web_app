@@ -7,10 +7,10 @@ import Footer from "./Footer/Footer";
 
 export default function Layouts() {
     return (
-        <div>
+        <Layout className="layout">
             <Navbar />
             <Outlet />
             <Footer />
-        </div>
+        </Layout>
     )
 }
