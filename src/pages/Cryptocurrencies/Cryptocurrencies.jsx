@@ -64,7 +64,7 @@ export default function Cryptocurrencies() {
 
     return (
         <>
-            <Row gutter={[32, 32]} className="coin-card-container">
+            <Row gutter={[24, 24]} className="coin-card-container">
                 {/* xs: take up full width
                     sm: two per row  */}
                 {coinsEl}
