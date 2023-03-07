@@ -1,0 +1,10 @@
+.home-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 30px;
+}
+
+.show-more {
+    margin-top: 0px !important;
+}
