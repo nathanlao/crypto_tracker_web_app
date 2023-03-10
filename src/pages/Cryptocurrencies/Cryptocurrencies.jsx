@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col, Card } from "antd"
+import { Row, Col, Card, Input } from "antd"
+import { MoneyCollectOutlined } from '@ant-design/icons';
 import { Link } from "react-router-dom"
 import axios from "axios";
 
@@ -29,16 +30,37 @@ export default function Cryptocurrencies({ simplifiedCount }) {
     };
 
     const [coins, setCoins] = useState([])
+    const [inputTerm, setInputTerm] = useState("")
+
+    // Function to handle input change
+    function handleSearchChange(event) {
+        const { value } = event.target
+        // console.log(value)
+        setInputTerm(value)
+    }
 
     useEffect(()=> {
-        axios.request(options)
-            .then((response) => {
-                const { data } = response.data
-                // console.log(data.coins)
-                setCoins(data.coins)
+        // Check empty input term
+        if (inputTerm === "") {
+            // First Fetch if no input 
+            axios.request(options)
+                .then((response) => {
+                    const { data } = response.data
+                    // console.log(data.coins)
+                    setCoins(data.coins)
+                })
+                .catch((err) => console.log(err));
+        } else {
+            // Filter the coins if there is input search
+            const filterCoins = coins.filter((coin) => {
+                return coin.name.toLowerCase().includes(inputTerm.toLowerCase())
             })
-            .catch((err) => console.log(err));
-    }, [])
+    
+            setCoins(filterCoins)
+        }
+
+    }, [inputTerm]) // Rerender depends on search input
+
 
     const coinsEl = coins.map(coin => {
         return (
@@ -67,6 +89,13 @@ export default function Cryptocurrencies({ simplifiedCount }) {
 
     return (
         <>
+            <div className="search-crypto">
+                <Input
+                    prefix={<MoneyCollectOutlined />}
+                    placeholder="Search your cryptocurrency"
+                    onChange={handleSearchChange}
+                />
+            </div>
             <Row gutter={[24, 24]} className="coin-card-container">
                 {/* xs: take up full width
                     sm: two per row  */}
