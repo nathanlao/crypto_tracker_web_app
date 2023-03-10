@@ -79,7 +79,7 @@ export default function Home() {
                     <Link to="/cryptocurrencies">Show More</Link>
                 </Typography.Title>
             </div>
-            <Cryptocurrencies simplifiedCount={true} />
+            <Cryptocurrencies simplifiedCount={true} hideSearchBar={true}/>
             <div className="home-header-container">
                 <Typography.Title level={2}>
                     Lastest Crypto News

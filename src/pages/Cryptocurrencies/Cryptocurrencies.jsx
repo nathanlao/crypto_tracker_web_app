@@ -7,7 +7,7 @@ import axios from "axios";
 import "./Cryptocurrencies.css"
 import millify from "millify";
 
-export default function Cryptocurrencies({ simplifiedCount }) {
+export default function Cryptocurrencies({ simplifiedCount, hideSearchBar }) {
 
     // Fetch only 10 crypto if simpifiedCount is true
     const topTen = simplifiedCount ? 10 : 100
@@ -89,13 +89,18 @@ export default function Cryptocurrencies({ simplifiedCount }) {
 
     return (
         <>
-            <div className="search-crypto">
-                <Input
-                    prefix={<MoneyCollectOutlined />}
-                    placeholder="Search your cryptocurrency"
-                    onChange={handleSearchChange}
-                />
-            </div>
+            {   
+                // Conditional render the search bar (hide it on home page)
+                !hideSearchBar && (
+                    <div className="search-crypto">
+                        <Input
+                            prefix={<MoneyCollectOutlined />}
+                            placeholder="Search your cryptocurrency"
+                            onChange={handleSearchChange}
+                        />
+                    </div>
+                )
+            }        
             <Row gutter={[24, 24]} className="coin-card-container">
                 {/* xs: take up full width
                     sm: two per row  */}
