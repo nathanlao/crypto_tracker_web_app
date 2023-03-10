@@ -6,18 +6,20 @@ import axios from "axios";
 import "./Cryptocurrencies.css"
 import millify from "millify";
 
-export default function Cryptocurrencies() {
+export default function Cryptocurrencies({ simplifiedCount }) {
+
+    // Fetch only 10 crypto if simpifiedCount is true
+    const topTen = simplifiedCount ? 10 : 100
 
     const options = {
         method: 'GET',
         url: 'https://coinranking1.p.rapidapi.com/coins',
         params: {
             referenceCurrencyUuid: 'yhjMzLPhuIDl',
-            timePeriod: '24h',
-            'tiers[0]': '1',
+            timePeriod: '24h', 'tiers[0]': '1',
             orderBy: 'marketCap',
             orderDirection: 'desc',
-            limit: '50',
+            limit: `${topTen}`,
             offset: '0'
         },
         headers: {
@@ -32,7 +34,7 @@ export default function Cryptocurrencies() {
         axios.request(options)
             .then((response) => {
                 const { data } = response.data
-                console.log(data.coins)
+                // console.log(data.coins)
                 setCoins(data.coins)
             })
             .catch((err) => console.log(err));
