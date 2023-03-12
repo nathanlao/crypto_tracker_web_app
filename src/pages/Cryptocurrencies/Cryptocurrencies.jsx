@@ -24,8 +24,8 @@ export default function Cryptocurrencies({ simplifiedCount, hideSearchBar }) {
             offset: '0'
         },
         headers: {
-            'X-RapidAPI-Key': '2276dec5d9msha4514d2a5f75692p1e5181jsnda7948426efb',
-            'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
+            'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
+            'X-RapidAPI-Host': process.env.REACT_APP_API_COIN_HOST
         }
     };
 

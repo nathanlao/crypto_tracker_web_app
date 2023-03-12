@@ -7,7 +7,7 @@ import axios from "axios"
 
 import "./Home.css"
 import Cryptocurrencies from "../Cryptocurrencies/Cryptocurrencies";
-import News from "../News";
+import News from "../News/News";
 
 export default function Home() {
 
@@ -24,8 +24,8 @@ export default function Home() {
             offset: '0'
         },
         headers: {
-            'X-RapidAPI-Key': '2276dec5d9msha4514d2a5f75692p1e5181jsnda7948426efb',
-            'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
+            'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
+            'X-RapidAPI-Host': process.env.REACT_APP_API_COIN_HOST
         }
     };
 
@@ -88,7 +88,7 @@ export default function Home() {
                     <Link to="/news">Show More</Link>
                 </Typography.Title>
             </div>
-            <News />
+            <News simplifiedCount={true}/>
         </div>
     )
 }
