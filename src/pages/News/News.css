@@ -1,0 +1,40 @@
+.news-card {
+    min-height: 300px;
+}
+
+.news-image-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.news-title {
+    width: 80%;
+}
+
+.news-img,
+.provider-img {
+    width: 100px;
+    height: 100px;
+}
+
+.news-card p {
+    color: black;
+    margin: 10px 0px;
+}
+
+.provider-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.provider-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.provider-name {
+    font-size: 12px;
+}
