@@ -6,7 +6,7 @@ import Layout from './components/Layout.jsx'
 import Home from './pages/Home/Home'
 import Cryptocurrencies from './pages/Cryptocurrencies/Cryptocurrencies'
 import CryptoDetails from './pages/CryptoDetails.jsx'
-import News from './pages/News.jsx'
+import News from './pages/News/News.jsx'
 
 import "./App.css"
 
