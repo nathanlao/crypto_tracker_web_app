@@ -8,22 +8,19 @@ import "./News.css"
 
 export default function News( { simplifiedCount }) {
 
-    const count = simplifiedCount ? 7 : 100
+    const count = simplifiedCount ? 6 : 100
 
     const [news, setNews] = useState([])
 
     const options = {
         method: 'GET',
-        url: 'https://bing-news-search1.p.rapidapi.com/news/search',
+        url: 'https://real-time-news-data.p.rapidapi.com/search',
         params: {
-            safeSearch: 'Off', 
-            textFormat: 'Raw',
-            freshness: 'Day',
-            count: `${count}`,
-            q: 'crypto'
+            query: 'crypto',
+            country: 'US',
+            lang: 'en'
         },
         headers: {
-            'X-BingApis-SDK': 'true',
             'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
             'X-RapidAPI-Host': process.env.REACT_APP_API_NEWS_HOST
         }
@@ -32,41 +29,41 @@ export default function News( { simplifiedCount }) {
     useEffect(() => {
         axios.request(options)
             .then(response => {
-                setNews(response.data.value)
+                setNews(response.data.data)
             })
             .catch(err => console.log(err))
     }, [])
 
-    const newsEl = news.map((singleNews, index) => {
+    const newsEl = news.slice(0, count).map((singleNews, index) => {
         return (
             <Col xs={24} sm={12} lg={8} key={index}>
                 <Card className="news-card" hoverable>
-                    <a href={singleNews.url} target="_blank" rel="noreferrer">
+                    <a href={singleNews.link} target="_blank" rel="noreferrer">
                         <div className="news-image-container">
                             <Typography.Title className="news-title" level={4}>
-                                {singleNews.name}
+                                {singleNews.title}
                             </Typography.Title>
                             <img 
                                 alt="icon of news" 
-                                src={singleNews?.image?.thumbnail?.contentUrl || tempPic}
+                                src={singleNews?.photo_url || tempPic}
                                 className="news-img"
                             />
                         </div>
-                        <p>
+                        {/* <p>
                             {singleNews.description.length > 200
                                 ? `${singleNews.description.substring(0, 200)}...`
                                 : singleNews.description
                             }
-                        </p>
+                        </p> */}
                         <div className="provider-container">
                             <div className="provider-title">
                                 <Avatar 
                                     alt="icon of provider"
-                                    src={singleNews?.provider[0]?.image?.thumbnail?.contentUrl || tempPic}     
+                                    src={singleNews?.source_logo_url || tempPic}     
                                 />
-                                <p className="provider-name">{singleNews?.provider[0].name}</p>
+                                <p className="provider-name">{singleNews?.source_url}</p>
                             </div>
-                            <p>{moment(singleNews.datePublished).startOf('ss').fromNow()}</p>
+                            <p>{moment(singleNews.published_datetime_utc).startOf('ss').fromNow()}</p>
                         </div>
                     </a>
                 </Card>
